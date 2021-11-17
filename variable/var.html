@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var width = 100;
+      console.log(width);
+      var width = 200;
+      function setWidth() {
+        //   var variable is functtion scop .it is function jail
+        var width = 500;
+        console.log(width);
+      }
+      setWidth();
+      console.log(width);
+
+      var age = 30;
+
+      if (age > 12) {
+        // var dogYears = age * 7;
+        let dogYears = age * 7;
+        console.log("your dog age is " + dogYears);
+      }
+      console.log(dogYears);
+      //   let and const are block scoped
+      //   var is function scoped
+    </script>
+  </body>
+</html>

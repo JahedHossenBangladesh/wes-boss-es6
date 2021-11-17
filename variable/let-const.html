@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const key = "abc233";
+      let points = 40;
+      let winner = false;
+      if (points > 30) {
+        let winner = true;
+        console.log(`block level winner is ${winner}`);
+      }
+
+      console.log(`winner is ${winner}`);
+      //   key = "123" for the const you count assing a new value to the const
+      const person = {
+        name: "John",
+        age: 30,
+      };
+
+      person.name = "pete";
+      console.log(person.name);
+
+      const wes = Object.freeze(person);
+      wes.age = 40;
+      console.log(`wes.age ${wes.age}`); //wes.age 30
+    </script>
+  </body>
+</html>
