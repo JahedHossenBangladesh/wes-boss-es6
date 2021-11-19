@@ -13,3 +13,6 @@ console.log(win)
 const ages = [12, 17, 8, 21, 14, 11];
 const old = ages.filter((age) => age >= 10);
 console.log(old);
+
+// how to write a function
+function getResult 

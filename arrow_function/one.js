@@ -6,7 +6,7 @@ const names = [
 const fullNames = names.map(name => `${name} bos`)
 console.log(fullNames)
 const fullNames2 = names.map(() => `cool bos`);
-console.log(fullNames2)
+console.log(fullNames2)d
 
 // function declaration
 const sayMyName = (name) =>{
