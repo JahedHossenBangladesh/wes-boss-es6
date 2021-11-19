@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "John",
+        job: "web developer",
+        liveIn: "Bangladesh",
+        bio: "I am a Happy person . Ilove to play with the computer",
+      };
+      const markup = `
+<div class='person'>
+    <h2>My name is ${person.name}</h2>
+    <p> I am a ${person.job}</p>
+    <p> I live in ${person.liveIn} </p>
+    <p> My info : ${person.bio}</p>
+    
+    </div>
+
+`;
+      const song = {
+        title: "The Sign",
+        artist: "Ace of Base",
+        album: "Titanic",
+        year: "2000",
+        // duration: "3:43",
+        genre: "Rock",
+      };
+      const markup2 = `
+div class="song">
+    <h2>${song.title}</h2>
+    <p> ${song.artist}</p>
+    <p> ${song.album}</p>
+    <p> ${song.year}</p>
+ <p> ${song.duration ? `Duration: ${song.duration}` : ""}</p>
+    <p> ${song.genre}</p>
+    </div>
+`;
+      document.body.innerHTML =
+        markup +
+        `
+      
+      ${markup2}
+      `;
+    </script>
+  </body>
+</html>

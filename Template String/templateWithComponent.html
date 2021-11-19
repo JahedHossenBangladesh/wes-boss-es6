@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const bear = {
+        name: "Belgian wit",
+        brewery: "Brouwerij De Koningshoeven",
+        keywords: [
+          "belgian",
+          "wit",
+          "bier",
+          "bieren",
+          "bierenbrouwerij",
+          "bierenbrouwerij de koningshoeven",
+        ],
+      };
+      function renderkeywords(keywords) {
+        return `
+       <ul>
+        
+        ${keywords
+          .map(
+            (keyword) => `
+            <li>${keyword}</li>
+            `
+          )
+          .join("")}
+        
+        </ul>
+`;
+      }
+      const markup = `
+    <div class ="beer">
+        <h2>${bear.name}</h2>
+        <p>${bear.brewery}</p>
+${renderkeywords(bear.keywords)}
+</div>
+    `;
+      document.body.innerHTML = markup;
+    </script>
+  </body>
+</html>

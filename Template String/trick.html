@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+<style>
+    .bg{
+        background-color: #a8d343;
+    }
+</style>
+
+  </head>
+  <body>
+    <script>
+      function showtheDate(string,...values) {
+let str = ''
+string.forEach((string,i) =>{
+    str += `${string} <span contenteditable class='bg'>${values[i] || ''}</span>`
+})
+
+return str;
+      }
+      const name = "jahed";
+      const city = "Chittagong";
+      const job = "web developer";
+      const salary = "50000";
+
+
+      const template = showtheDate`
+Hello ${name}, Live in the ${city}.I am a ${job} and my salary is ${salary}
+      `;
+    document.body.innerHTML = template;
+    </script>
+  </body>
+
+`;
+    </script>
+  </body>
+</html>
