@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>New String Methods</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "John",
+        age: 30,
+        location: {
+          city: "New York",
+          temp: 92,
+        },
+      };
+      const { name, age } = person;
+      const { city, temp } = person.location;
+
+      //   another example
+      const wes = {
+        first: "Wes",
+        last: "Bos",
+        links: {
+          social: {
+            twitter: "https://twitter.com/wesbos",
+            facebook: "https://facebook.com/wesbos.developer",
+          },
+          web: {
+            blog: "https://wesbos.com",
+          },
+        },
+      };
+      const setting = { width: 330, height: 400, background: "red" };
+      const {
+        width = 300,
+        height = 300,
+        background,
+        v = 22,
+        x = 222,
+      } = setting;
+    </script>
+  </body>
+</html>

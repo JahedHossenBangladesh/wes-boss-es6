@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const { w: width, h: height, d: depth } = { w: 10, h: 20, d: 30 };
+      const { w: width = 400, h: height = 300, d: depth = 200 } = { w: 800 };
+      console.log(width, height, depth); // 800, 300, 200
+    </script>
+  </body>
+</html>

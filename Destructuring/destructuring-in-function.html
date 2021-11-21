@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destructuring</title>
+  </head>
+  <body>
+    <script>
+      function convertCurrency(amount) {
+        let converted = {
+          USD: amount / 6.78,
+          EUR: amount / 7.11,
+          JPY: amount / 0.0093,
+          CNY: amount / 6.09,
+          KRW: amount / 0.0053,
+        };
+        return converted;
+      }
+      const hundo = convertCurrency(100);
+      console.log(hundo); // EUR: 14.064697609001406
+      // JPY: 10752.688172043012
+      // USD: 14.749262536873156
+      const { USD, CNY, KRW, JPY } = convertCurrency(100);
+      console.log(USD, CNY, KRW, JPY);
+      //    14.749262536873156
+      //    16.420361247947454
+      //    18867.924528301886
+      //    10752.688172043012
+
+      function tipCalculator({ amount, tip = 0.23, tax = 0.08 }) {
+        return amount + amount * tip + amount * tax;
+      }
+      const bill = tipCalculator({ amount: 100 });
+      console.log(bill); // 131
+
+      function tipCalculator2({ amount, tip = 0.23, tax = 0.08 } = {}) {
+        return amount + amount * tip + amount * tax;
+      }
+      const bill2 = tipCalculator2();
+      console.log(bill2);
+    </script>
+  </body>
+</html>

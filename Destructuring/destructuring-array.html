@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring array</title>
+  </head>
+  <body>
+    <script>
+      const job = ["Front-end", "Back-end", "Devops"];
+      const [front, back, devops] = job;
+      console.log(front, back, devops); // Front-end Back-end Devops
+      const people = "jhon,33,web-developer";
+
+      const [name, age, jobTiltle] = people.split(",");
+      console.log(name, age, jobTiltle); // jhon 33 web-developer
+      const data = [amazon, 222, 33, 44, 55];
+      const [productBy, price, code] = data;
+      console.log(productBy, price, code); // amazon 222 33
+
+      const team = ["Wes", "Kait", "John", "Mike"];
+      const [captain, assistant, ...players] = team;
+      console.log(captain, assistant, players); // Wes Kait [ 'John', 'Mike' ]
+      console.log(players[1]); // Mike
+    </script>
+  </body>
+</html>
