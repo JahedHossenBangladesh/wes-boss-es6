@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>abbribiton</title>
+  </head>
+  <body>
+    <div class="bio"></div>
+
+    <script>
+      const dic = {
+        HTML: "Hypertext Markup language",
+        CSS: "Cascading Style Sheets",
+        JS: "JavaScript",
+      };
+
+      function abbreviation(strings, ...values) {
+        let abbreviated = values.map((value) => {
+          if (dic[value]) {
+            return ` <abbr title="${dic[value]}">${value}</abbr>`;
+          }
+          return value;
+        });
+
+        return strings.reduce((sentence, string, i) => {
+          return sentence + string + abbreviated[i];
+        }, "");
+      }
+      const person = {
+        name: "john",
+        job: "web developer",
+      };
+      const sentence = abbreviation` Hi . I am ${person.name}. MY job is to ${
+        person.job
+      }.I know ${"HTML"},${"CSS"},${"JS"}`;
+
+      const bio = document.querySelector(".bio");
+      const p = document.createElement("p");
+      p.innerHTML = sentence;
+      bio.appendChild(p);
+    </script>
+  </body>
+</html>
