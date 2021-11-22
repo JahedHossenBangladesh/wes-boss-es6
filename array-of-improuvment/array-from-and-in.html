@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="people">
+      <p>Jahed</p>
+      <p>Sajid</p>
+      <p>Hossen</p>
+      <p>Jibon</p>
+    </div>
+    <script>
+      const people = Array.from(document.querySelectorAll(".people p"));
+      const name = people.map((person) => person.textContent);
+      console.log(name);
+    </script>
+  </body>
+</html>
