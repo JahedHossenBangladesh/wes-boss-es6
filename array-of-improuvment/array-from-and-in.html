@@ -14,9 +14,15 @@
       <p>Jibon</p>
     </div>
     <script>
-      const people = Array.from(document.querySelectorAll(".people p"));
-      const name = people.map((person) => person.textContent);
-      console.log(name);
+      // 1st part
+      //   const people = Array.from(document.querySelectorAll(".people p"));
+      //   const name = people.map((person) => person.textContent);
+      //   console.log(name);
+
+      // 2nd part
+      const people = document.querySelectorAll(".people p");
+      const peopleArray = Array.from(people, (people) => people.textContent);
+      //    3rd
     </script>
   </body>
 </html>
