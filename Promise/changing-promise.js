@@ -25,6 +25,23 @@ function getPostById(id){
         }
     })
 }
+function hydrationOfAuthor(post)
+{
+    return new Promise((resolve,reject) =>{
+        const authorDetail = authors.find(author => author.name === post.author);
+        if(authorDetail){
+            post.author = authorDetail;
+            resolve(post);
 
-let findTheId =getPostById(3);
-console.log(findTheId);
+        } else{
+            reject(`No author found for ${post.author}`);
+        }
+    })
+}
+
+getPostById(2).then(post =>{
+    
+return hydrationOfAuthor(post)
+})
+.then(data => console.log(data))
+.catch(error => console.log(error));
