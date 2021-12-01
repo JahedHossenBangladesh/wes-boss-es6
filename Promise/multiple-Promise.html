@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const weather = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({
+            temp: 29,
+            city: "Miami",
+            country: "USA",
+          });
+        }, 2000);
+      });
+
+      const tweets = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(["I like cake", "BBQ is good too!"]);
+        }, 500);
+      });
+
+      Promise.all([weather, tweets]).then((data) => {
+        const [weatherData, tweetsData] = data;
+        console.log(weatherData, tweetsData);
+
+        document.body.innerHTML = `<h1>It's ${weatherData.city} in ${tweetsData} </h1>`;
+      });
+    </script>
+  </body>
+</html>
