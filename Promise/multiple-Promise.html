@@ -8,28 +8,40 @@
   </head>
   <body>
     <script>
-      const weather = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve({
-            temp: 29,
-            city: "Miami",
-            country: "USA",
-          });
-        }, 2000);
-      });
+      //   const weather = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       resolve({
+      //         temp: 29,
+      //         city: "Miami",
+      //         country: "USA",
+      //       });
+      //     }, 2000);
+      //   });
 
-      const tweets = new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(["I like cake", "BBQ is good too!"]);
-        }, 500);
-      });
+      //   const tweets = new Promise((resolve) => {
+      //     setTimeout(() => {
+      //       resolve(["I like cake", "BBQ is good too!"]);
+      //     }, 500);
+      //   });
 
-      Promise.all([weather, tweets]).then((data) => {
-        const [weatherData, tweetsData] = data;
-        console.log(weatherData, tweetsData);
+      //   Promise.all([weather, tweets]).then((data) => {
+      //     const [weatherData, tweetsData] = data;
+      //     console.log(weatherData, tweetsData);
 
-        document.body.innerHTML = `<h1>It's ${weatherData.city} in ${tweetsData} </h1>`;
-      });
+      //     document.body.innerHTML = `<h1>It's ${weatherData.city} in ${tweetsData} </h1>`;
+      //   });
+      const postsPromise = fetch("https://wesbos.com/wp-json/wp/v2/posts");
+      const streetCarsPromise = fetch(
+        "http://data.ratp.fr/api/datasets/1.0/search/?q=paris"
+      );
+
+      Promise.all([postsPromise, streetCarsPromise])
+        .then((values) => {
+          return Promise.all(values.map((vale) => vale.json()));
+        })
+        .then((res) => {
+          document.body.innerHTML = `res: ${res}`;
+        });
     </script>
   </body>
 </html>
