@@ -9,6 +9,7 @@ const classRoom = {
 
 for (const person in classRoom) {
   console.log(person);
+  console.log(person)
 }
 
 const syms = Object.getOwnPropertySymbols(classRoom);
