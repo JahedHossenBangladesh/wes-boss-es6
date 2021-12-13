@@ -38,5 +38,5 @@ for (const [index, value] of people.kids.entries()) {
   if (value === "Jane") {
     break;
   }
-  console.log(value,index);
+  console.log(value);
 }
