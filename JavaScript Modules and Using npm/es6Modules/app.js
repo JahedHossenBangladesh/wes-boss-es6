@@ -1,4 +1,2 @@
-
-import lodash from 'lodash';
-import slug from 'slug';
-
+import { uniq } from "lodash";
+import insane from "insane";
