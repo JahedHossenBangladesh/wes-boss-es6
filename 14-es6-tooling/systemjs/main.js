@@ -3,3 +3,4 @@ import {addTax} from './checklist'
 
 // console.log(kebabCase('Jahed is cool'));
 console.log(addTax(100,0.1));
+// this is from git remote repo
